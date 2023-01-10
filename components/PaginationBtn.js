@@ -1,7 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 function PaginationBtn() {
 	const router = useRouter();
