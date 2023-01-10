@@ -1,12 +1,8 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { useRef } from "react";
-import { XMarkIcon } from "@heroicons/react/20/solid";
-import {
-	Squares2X2Icon,
-	MagnifyingGlassIcon,
-	MicrophoneIcon,
-} from "@heroicons/react/24/solid";
+// import { XMarkIcon } from "@heroicons/react/24/solid";
+// import { MagnifyingGlassIcon, MicrophoneIcon } from "@heroicons/react/24/solid";
 import Avatar from "./Avatar";
 import HeaderOptions from "./HeaderOptions";
 
@@ -17,7 +13,9 @@ function Header() {
 
 	const search = (e) => {
 		e.preventDefault();
-		const term = searchInputRef.current.value ? searchInputRef.current.value : searchRef.current.value;
+		const term = searchInputRef.current.value
+			? searchInputRef.current.value
+			: searchRef.current.value;
 
 		console.log(term);
 
@@ -44,16 +42,54 @@ function Header() {
 						ref={searchRef}
 						className='flex-grow w-full focus:outline-none'
 					/>
-					<XMarkIcon
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke-width='1.5'
+						stroke='currentColor'
 						className='h-7 sm:mr-3 cursor-pointer text-gray-500 transition duration-100 transform hover:scale-125'
-						onClick={() => {                            
-							searchRef.current.value = " "
+						onClick={() => {
+							searchRef.current.value = " ";
 						}}
-					/>
+					>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							d='M6 18L18 6M6 6l12 12'
+						/>
+					</svg>
 
-					<MicrophoneIcon className='mr-3 h-6 hidden sm:inline-flex text-blue-500 border-l-2 pl-4 border-gray-300' />
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke-width='1.5'
+						stroke='currentColor'
+						className='mr-3 h-6 hidden sm:inline-flex text-blue-500 border-l-2 pl-4 border-gray-300'
+					>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							d='M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z'
+						/>
+					</svg>
 
-					<MagnifyingGlassIcon className='h-6 text-blue-500 hidden sm:inline-flex ' />
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke-width='1.5'
+						stroke='currentColor'
+						className='h-6 text-blue-500 hidden sm:inline-flex '
+					>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z'
+						/>
+					</svg>
+
 					<button hidden type='submit' onClick={search}>
 						Search
 					</button>
@@ -69,16 +105,54 @@ function Header() {
 					ref={searchInputRef}
 					className='flex-grow w-full focus:outline-none'
 				/>
-				<XMarkIcon
-					className='h-7 sm:mr-3 cursor-pointer text-gray-500 transition duration-100 transform hover:scale-125'
-					onClick={() => {                        
-                        searchInputRef.current.value = " "
-                    }}
-				/>
+				<svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke-width='1.5'
+						stroke='currentColor'
+						className='h-7 sm:mr-3 cursor-pointer text-gray-500 transition duration-100 transform hover:scale-125'
+						onClick={() => {
+							searchRef.current.value = " ";
+						}}
+					>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							d='M6 18L18 6M6 6l12 12'
+						/>
+					</svg>
 
-				<MicrophoneIcon className='mr-3 h-6 inline-flex text-blue-500 border-l-2 pl-4 border-gray-300' />
+                    <svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke-width='1.5'
+						stroke='currentColor'
+						className='mr-3 h-6 hidden sm:inline-flex text-blue-500 border-l-2 pl-4 border-gray-300'
+					>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							d='M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z'
+						/>
+					</svg>
 
-				<MagnifyingGlassIcon className='h-6 text-blue-500 inline-flex ' />
+                    <svg
+						xmlns='http://www.w3.org/2000/svg'
+						fill='none'
+						viewBox='0 0 24 24'
+						stroke-width='1.5'
+						stroke='currentColor'
+						className='h-6 text-blue-500 hidden sm:inline-flex '
+					>
+						<path
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z'
+						/>
+					</svg>
+                        
 				<button hidden type='submit' onClick={search}>
 					Search
 				</button>
